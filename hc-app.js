@@ -1156,7 +1156,7 @@ function resolveScreenshots(root) {
     seenPaths.add(hit.path);
     const fig = document.createElement('figure');
     fig.className = 'hc-shot';
-    fig.innerHTML = `<img src="${escapeHtml(hit.path)}" alt="${escapeHtml(alt)}" loading="lazy"/>`;
+    fig.innerHTML = `<img src="${escapeHtml(hit.path)}?v=2" alt="${escapeHtml(alt)}" loading="lazy"/>`;
     ph.replaceWith(fig);
   });
 }
