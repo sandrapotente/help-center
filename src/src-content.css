@@ -1,0 +1,296 @@
+:root{--am:#b45309}
+/* App download buttons inside articles */
+.cv-body .art-app-row{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 22px}
+.cv-body .art-app-btn{display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--t-1);text-decoration:none;transition:all .15s;min-width:170px}
+.cv-body .art-app-btn:hover{border-color:#6a1fbf;background:color-mix(in oklab,#6a1fbf 5%,var(--bg));transform:translateY(-1px)}
+.cv-body .art-app-btn svg{width:24px;height:24px;flex-shrink:0;color:var(--t-1)}
+.cv-body .art-app-text{display:flex;flex-direction:column;line-height:1.1}
+.cv-body .art-app-l{display:block;font-size:10px;color:var(--t-4);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.cv-body .art-app-n{display:block;font-size:14px;font-weight:700;margin-top:3px;color:var(--t-1)}
+
+/* src-content.css ===================================================
+   Styles for hand-built article bodies pulled from per-category source
+   HTML files. Covers 3 source generations of class families, all
+   re-skinned to R-Link brand: #6a1fbf purple, #001233 navy,
+   #00c853 green, #ffa500 orange. Raleway for headings, Open Sans for body.
+   Scoped under .cv-body to avoid leaking onto hub chrome.
+=================================================================== */
+
+.cv-body { font-family: 'Open Sans', system-ui, sans-serif; line-height: 1.6; color: var(--t-2); }
+.cv-body strong, .cv-body b { color: var(--t-1); font-weight: 700; }
+.cv-body a { color: #6a1fbf; font-weight: 600; text-decoration: none; }
+.cv-body a:hover { text-decoration: underline; }
+
+/* ── Image placeholder (replaces stripped base64 screenshots) ── */
+.src-img-placeholder {
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  padding:48px 20px; margin:14px 0; min-height:200px;
+  background: color-mix(in oklab, #6a1fbf 4%, var(--bg-soft));
+  border: 2px dashed color-mix(in oklab, #6a1fbf 25%, var(--bd-soft));
+  border-radius: 12px; color: var(--t-4);
+  font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  text-align: center;
+}
+.src-img-placeholder svg { color: color-mix(in oklab, #6a1fbf 60%, var(--t-4)); }
+.src-img-placeholder span { max-width: 60ch; }
+.real-screenshot, .ss { display:block; margin:14px 0; }
+.real-img, .ss img { max-width:100%; border-radius:10px; border:1px solid var(--bd-soft); display:block; }
+
+/* Resolved screenshot from the library (replaces placeholder) */
+.cv-body figure.hc-shot {
+  margin: 18px 0;
+}
+.cv-body figure.hc-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.ss-caption, .ss-cap, .ov-cap {
+  display:block; margin-top:8px; font-size:13px; color:var(--t-4); text-align:center; font-style:italic;
+}
+
+/* ── STEPS (gen-1: account-billing, getting-started, scheduling, hosting) ── */
+.cv-body .steps { margin: 24px 0; }
+.cv-body .steps-label, .cv-body .ov-label, .cv-body .details-label, .cv-body .hc-steps-label {
+  display:inline-block; font-family:'Raleway',sans-serif; font-weight:800; font-size:11.5px;
+  letter-spacing:.14em; text-transform:uppercase; color:#000;
+  padding:0; background: transparent; border-radius:0;
+  margin-bottom: 18px;
+}
+.cv-body .step, .cv-body .ov-sec {
+  display:grid; grid-template-columns: 40px 1fr; gap: 16px; margin: 0 0 22px; align-items:start;
+}
+.cv-body .step-num, .cv-body .ov-num, .cv-body .step-n, .cv-body .step-circle {
+  width:34px; height:34px; border-radius:50%; background:#001233 !important; color:#fff !important;
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:15px;
+  display:grid; place-items:center; flex-shrink:0;
+}
+.cv-body .step-body, .cv-body .ov-body { min-width:0; }
+.cv-body .step-title, .cv-body .ov-title {
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:18px; color:var(--t-1);
+  letter-spacing:-.012em; margin: 4px 0 6px;
+}
+.cv-body .step-desc, .cv-body .ov-desc, .cv-body .body-text {
+  font-size:15px; line-height:1.65; color:var(--t-2);
+}
+.cv-body .step-line, .cv-body .step-connector {
+  width:2px; background: color-mix(in oklab, #6a1fbf 25%, var(--bd-soft));
+  margin: 4px auto; min-height: 20px;
+}
+
+/* ── CALLOUTS — gen-1 .callout ── */
+.cv-body .callout {
+  display:grid; grid-template-columns: 36px 1fr; gap: 12px; align-items:start;
+  padding:14px 16px; margin:18px 0; border-radius:10px;
+  background: color-mix(in oklab, #6a1fbf 6%, var(--bg-soft));
+  border-left: 3px solid #6a1fbf;
+}
+.cv-body .callout-icon {
+  width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+  background:#6a1fbf; color:#fff; font-size:14px; flex-shrink:0;
+}
+.cv-body .callout-body { min-width:0; }
+.cv-body .callout-title {
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:14px; color:var(--t-1);
+  margin-bottom: 3px; letter-spacing: -.005em;
+}
+.cv-body .callout-text { font-size: 14px; line-height: 1.55; color: var(--t-2); }
+.cv-body .callout.tip {
+  background: color-mix(in oklab, #ffa500 7%, var(--bg-soft)); border-left-color: #ffa500;
+}
+.cv-body .callout.tip .callout-icon { background: #ffa500; color: #1f1206; }
+.cv-body .callout.warn {
+  background: color-mix(in oklab, #dc2626 6%, var(--bg-soft)); border-left-color: #dc2626;
+}
+.cv-body .callout.warn .callout-icon { background: #dc2626; }
+.cv-body .callout.note {
+  background: var(--bg-soft); border-left-color: var(--t-4);
+}
+.cv-body .callout.note .callout-icon { background: var(--t-4); }
+
+/* ── CALLOUTS — gen-2 .co with .pu .gr .te .am modifiers ── */
+.cv-body .co {
+  display:grid; grid-template-columns: 36px 1fr; gap: 12px; align-items:start;
+  padding:14px 16px; margin:18px 0; border-radius:10px;
+  background: color-mix(in oklab, #6a1fbf 6%, var(--bg-soft));
+  border-left: 3px solid #6a1fbf;
+}
+/* If the icon got stripped, collapse to single column so content fills width */
+.cv-body .co:not(:has(> .co-ico)) { grid-template-columns: 1fr; }
+.cv-body .co-ico {
+  width:30px; height:30px; border-radius:50%; display:grid; place-items:center;
+  background:#6a1fbf; color:#fff; font-size:14px; flex-shrink:0;
+}
+.cv-body .co-h {
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:14px; color:var(--t-1);
+  margin-bottom: 3px;
+}
+.cv-body .co-t { font-size:14px; line-height:1.55; color:var(--t-2); }
+.cv-body .co.gr { background: color-mix(in oklab, #00c853 7%, var(--bg-soft)); border-left-color: #00c853; }
+.cv-body .co.gr .co-ico { background: #00c853; }
+.cv-body .co.am, .cv-body .co.te {
+  background: color-mix(in oklab, #ffa500 7%, var(--bg-soft)); border-left-color: #ffa500;
+}
+.cv-body .co.am .co-ico, .cv-body .co.te .co-ico { background: #ffa500; color: #1f1206; }
+.cv-body .co.bl { background: color-mix(in oklab, #2a3955 6%, var(--bg-soft)); border-left-color: #2a3955; }
+.cv-body .co.bl .co-ico { background: #2a3955; }
+
+/* ── CALLOUTS — gen-3 .callout-info .callout-warn .callout-success ── */
+.cv-body [class*="callout-info"], .cv-body [class*="callout-success"], .cv-body [class*="callout-warn"] {
+  padding:14px 16px; margin:18px 0; border-radius:10px;
+  background: color-mix(in oklab, #6a1fbf 6%, var(--bg-soft));
+  border-left: 3px solid #6a1fbf; font-size: 14px; line-height: 1.55;
+}
+.cv-body .callout-success { background: color-mix(in oklab, #00c853 7%, var(--bg-soft)); border-left-color: #00c853; }
+.cv-body .callout-warn { background: color-mix(in oklab, #dc2626 6%, var(--bg-soft)); border-left-color: #dc2626; }
+
+/* ── DETAILS / DT rows (gen-2) ── */
+.cv-body .dt {
+  margin: 16px 0; padding: 16px 18px; border-radius: 10px;
+  background: var(--bg-soft); border: 1px solid var(--bd-soft);
+}
+.cv-body th.dt-head { font-family:'Raleway',sans-serif; font-weight:800; letter-spacing: -.005em; }
+
+/* ── TABLES (gen-2 + gen-3) ── */
+.cv-body table {
+  width:100%; border-collapse:collapse; margin:18px 0; font-size:14px;
+  border:1px solid var(--bd-soft); border-radius:10px; overflow:hidden;
+}
+.cv-body table thead th {
+  font-family:'Raleway',sans-serif; padding:13px 16px; background:#001233; color:#fff;
+  font-weight:700; text-align:left; font-size:13.5px; letter-spacing:.005em;
+}
+.cv-body table tbody td {
+  padding:12px 16px; border-bottom:1px solid var(--bd-soft); vertical-align:top; color:var(--t-2);
+}
+.cv-body table tbody tr:last-child td { border-bottom:none; }
+.cv-body .field-key, .cv-body .ref-table .field-key {
+  font-family:'Raleway',sans-serif; font-weight:700; color:var(--t-1); white-space:nowrap;
+}
+.cv-body .field-desc { color: var(--t-3); font-size: 13.5px; }
+.cv-body .tag-req, .cv-body .tag-opt {
+  display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px;
+  font-family:'Raleway',sans-serif; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+}
+.cv-body .tag-req { background: color-mix(in oklab, #dc2626 12%, var(--bg)); color: #b91c1c; }
+.cv-body .tag-opt { background: color-mix(in oklab, #6a1fbf 10%, var(--bg)); color: #6a1fbf; }
+.cv-body .see-dash { color: var(--t-5); }
+.cv-body .td-see-article a { font-size: 13px; }
+.cv-body .ref-table-wrap { overflow-x:auto; margin: 18px 0; }
+
+/* ── STATUS pills + role badges (gen-3) ── */
+.cv-body .status-pill {
+  display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:999px;
+  font-family:'Raleway',sans-serif; font-weight:700; font-size:12px;
+  background: color-mix(in oklab, #00c853 12%, var(--bg)); color:#007a35;
+}
+.cv-body .status-pill.pending {
+  background: color-mix(in oklab, #ffa500 14%, var(--bg)); color:#a36300;
+}
+.cv-body .status-dot { width:6px; height:6px; border-radius:50%; background: currentColor; }
+.cv-body .role-badge {
+  display:inline-block; padding:3px 10px; border-radius:999px; font-size:12px;
+  font-family:'Raleway',sans-serif; font-weight:700; letter-spacing:.02em;
+  background: var(--bg-soft); color: var(--t-2); border: 1px solid var(--bd-soft);
+}
+.cv-body .rb-owner { background: color-mix(in oklab, #6a1fbf 14%, var(--bg)); color:#6a1fbf; border-color: color-mix(in oklab, #6a1fbf 30%, var(--bd-soft)); }
+.cv-body .rb-admin { background: color-mix(in oklab, #00c853 12%, var(--bg)); color:#007a35; border-color: color-mix(in oklab, #00c853 25%, var(--bd-soft)); }
+.cv-body .rb-mod { background: color-mix(in oklab, #ffa500 14%, var(--bg)); color:#a36300; border-color: color-mix(in oklab, #ffa500 30%, var(--bd-soft)); }
+
+/* ── PLAN tags (gen-2) ── */
+.cv-body .plan-tag, .cv-body .plan-badge, .cv-body .m-tag {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:3px 10px; border-radius:999px; font-family:'Raleway',sans-serif;
+  font-weight:700; font-size:11.5px; letter-spacing:.04em; text-transform:uppercase;
+  background: color-mix(in oklab, #6a1fbf 10%, var(--bg)); color:#6a1fbf;
+  border: 1px solid color-mix(in oklab, #6a1fbf 22%, var(--bd-soft));
+}
+.cv-body .plan-tag.all, .cv-body .pb-all, .cv-body .m-tag.a {
+  background: color-mix(in oklab, #00c853 10%, var(--bg)); color:#007a35;
+  border-color: color-mix(in oklab, #00c853 22%, var(--bd-soft));
+}
+.cv-body .plan-tag.business, .cv-body .pb-biz, .cv-body .biz-plan, .cv-body .m-tag.g {
+  background: color-mix(in oklab, #6a1fbf 12%, var(--bg)); color:#6a1fbf;
+  border-color: color-mix(in oklab, #6a1fbf 28%, var(--bd-soft));
+}
+.cv-body .plan-tag.basic, .cv-body .pb-basic {
+  background: var(--bg-soft); color:var(--t-2); border-color: var(--bd-soft);
+}
+.cv-body .plan-tag .dot, .cv-body .plan-badge .pb-dot, .cv-body .m-tag .m-tag-dot {
+  width:5px; height:5px; border-radius:50%; background: currentColor;
+}
+
+/* ── ELEMENT/TOOL grids (gen-2 engagement files) ── */
+.cv-body .el-grid, .cv-body .tool-grid {
+  display:grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap:14px; margin: 18px 0;
+}
+.cv-body .el-card, .cv-body .tool-card {
+  background: var(--bg-soft); border:1px solid var(--bd-soft); border-radius: 12px;
+  padding: 16px 18px; display:flex; flex-direction:column; gap: 10px;
+}
+.cv-body .el-ch, .cv-body .tool-card-top { display:flex; align-items:center; gap:10px; }
+.cv-body .el-ico, .cv-body .tool-card-icon {
+  width:32px; height:32px; border-radius:8px;
+  background: color-mix(in oklab, #6a1fbf 12%, var(--bg)); color:#6a1fbf;
+  display:grid; place-items:center; flex-shrink:0; font-size:16px;
+}
+.cv-body .el-name, .cv-body .tool-card-title {
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:15px; color:var(--t-1);
+}
+.cv-body .el-desc, .cv-body .tool-card-desc {
+  font-size:13.5px; line-height:1.55; color:var(--t-3); flex:1;
+}
+.cv-body .el-foot, .cv-body .tool-card-footer {
+  display:flex; justify-content:space-between; align-items:center; gap:8px;
+  padding-top: 8px; border-top: 1px solid var(--bd-soft); font-size: 12.5px;
+}
+.cv-body .el-badge, .cv-body .tool-plan, .cv-body .all-plans {
+  font-family:'Raleway',sans-serif; font-weight:700; font-size:11px; letter-spacing:.05em;
+  text-transform:uppercase; color: var(--t-4);
+}
+.cv-body .el-badge.biz, .cv-body .tool-plan.biz { color: #6a1fbf; }
+.cv-body .el-learn, .cv-body .tool-learn {
+  color: #6a1fbf; font-weight: 700; font-size: 12.5px; text-decoration: none;
+}
+.cv-body .el-learn:hover, .cv-body .tool-learn:hover { text-decoration: underline; }
+.cv-body .el-group-label, .cv-body .tool-section-head {
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:16px; color:var(--t-1);
+  letter-spacing:-.01em; margin: 24px 0 12px; display:flex; align-items:center; gap:10px;
+}
+.cv-body .el-gl-badge, .cv-body .tool-section-label {
+  font-size:11px; padding: 2px 8px; border-radius:999px; letter-spacing:.06em; text-transform:uppercase;
+  background: color-mix(in oklab, #6a1fbf 12%, var(--bg)); color:#6a1fbf; font-weight:700;
+}
+.cv-body .tool-section-plan { font-size: 11.5px; color: var(--t-4); margin-left:auto; }
+
+/* ── Misc structural ── */
+.cv-body .sec-h3, .cv-body .sub-h {
+  font-family:'Raleway',sans-serif; font-weight:800; font-size:18px; color:var(--t-1);
+  letter-spacing:-.012em; margin: 28px 0 10px;
+}
+.cv-body .art-divider {
+  height:1px; background:var(--bd-soft); margin:32px 0; border:none;
+}
+.cv-body .placeholder-section {
+  text-align:center; padding: 40px 20px; background: var(--bg-soft); border-radius: 12px; margin: 20px 0;
+}
+.cv-body .placeholder-emoji { font-size: 32px; margin-bottom: 10px; }
+.cv-body .placeholder-title { font-family:'Raleway',sans-serif; font-weight:800; font-size:17px; color:var(--t-1); margin-bottom:6px; }
+.cv-body .placeholder-text { font-size:14px; color:var(--t-3); }
+
+/* ── Hide source's own chrome that may have slipped through ── */
+.cv-body .bc, .cv-body .breadcrumb, .cv-body .m-bc,
+.cv-body .helpful, .cv-body .art-nav, .cv-body .article-feedback,
+.cv-body .prev-next, .cv-body .art-footer, .cv-body .af-helpful,
+.cv-body .af-nav { display: none !important; }
+
+/* ── Inline color overrides — neutralize hardcoded purples in source ── */
+.cv-body [style*="color:#7c3aed"], .cv-body [style*="color: #7c3aed"] { color: #6a1fbf !important; }
+.cv-body [style*="background:#7c3aed"], .cv-body [style*="background: #7c3aed"] { background: #6a1fbf !important; }
+.cv-body [style*="color:#a78bfa"] { color: #a64dff !important; }
+
+.cv-body blockquote{font-family:'Lora',Georgia,serif;font-size:16px;line-height:1.65;color:var(--t-2);border-left:3px solid #6a1fbf;padding:2px 0 2px 18px;margin:20px 0}
+.cv-body blockquote p{margin:0}
+
+.cv-body .hc-tabs{margin:18px 0 0}.cv-body .hc-tab-bar{display:flex;flex-wrap:wrap;gap:6px;padding:4px;border:1px solid var(--bd);border-radius:10px;background:var(--bg-soft);margin-bottom:24px;width:fit-content;max-width:100%}.cv-body .hc-tab{font-family:'Raleway',sans-serif;font-weight:700;font-size:14px;padding:9px 16px;border:0;border-radius:7px;background:transparent;color:var(--t-2);cursor:pointer}.cv-body .hc-tab:hover{color:var(--t-1)}.cv-body .hc-tab.is-active{background:#001233;color:#fff}.cv-body .hc-tab-panel{display:none}.cv-body .hc-tab-panel.is-active{display:block}
