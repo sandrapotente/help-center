@@ -21,11 +21,11 @@ const SUGGEST_CHIPS = [
 /* Articles that have received their new screenshot pass.
    Add ids here as each article is finished — the hub shows a check badge + per-category count. */
 const UPDATED = {
-  'getting-started': ['art-0','art-1','art-2','art-3','art-4','art-5','art-6','art-7','art-8'],
-  'account-billing': ['art-0','art-1','art-2','art-3','art-4','art-5','art-6','art-7','art-8'],
+  'getting-started': ['art-0','art-1','art-2','art-3','art-4','art-5','art-6','art-7','art-8','art-9'],
+  'account-billing': ['art-0','art-1','art-2','art-3','art-4','art-5','art-6','art-7','art-8','art-9'],
   'settings-support': ['art-0','art-1','art-2','art-3'],
-  hosting: ['art-0','art-1','art-2','art-5','art-7'],
-  elements: ['art-0','art-1','art-2','art-3','art-4','art-5'],
+  hosting: ['art-0','art-1','art-2','art-3','art-4','art-5','art-6','art-7','art-8','art-9'],
+  elements: ['art-0','art-1','art-2','art-3','art-4','art-5','art-7','art-8','art-9'],
   webinars: ['art-0'],
   meetings: ['art-a','art-b','art-c','art-d','art-e'],
   integrations: ["art-0","art-1","art-2","art-3","art-4","art-5","art-6","art-7","art-8","art-9","art-10","art-11","art-12","art-13"],
