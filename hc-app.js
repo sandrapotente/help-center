@@ -560,7 +560,7 @@ function sanitizeArticleHTML(html, title, catName) {
     for (let i = 0; i < 3 && inner.firstElementChild; i++) {
       const c = inner.firstElementChild;
       const ct = (c.textContent || '').trim();
-      if (!ct && !c.querySelector('img,video,iframe')) { c.remove(); continue; }
+      if (!ct && !(c.matches('img,video,iframe')||c.querySelector('img,video,iframe'))) { c.remove(); continue; }
       if (ct.toLowerCase() === title.toLowerCase()) { c.remove(); continue; }
       if (catName && ct.toLowerCase() === catName.toLowerCase()) { c.remove(); continue; }
       break;
@@ -570,7 +570,7 @@ function sanitizeArticleHTML(html, title, catName) {
   while (scope.firstElementChild) {
     const first = scope.firstElementChild;
     const txt = (first.textContent || '').trim();
-    const hasMedia = first.querySelector('img, video, iframe');
+    const hasMedia = first.matches('img, video, iframe') || first.querySelector('img, video, iframe');
     if (!txt && !hasMedia) first.remove();
     else break;
   }
