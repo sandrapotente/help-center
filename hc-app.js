@@ -32,6 +32,7 @@ const UPDATED = {
   engagement: ['art-0','art-1','art-2','art-3','art-4']
 };
 const isUpdated = (catId, artId) => (UPDATED[catId] || []).includes(artId);
+const hasVideo = (cat, a) => { const B = window.HC_ARTICLE_BODIES || {}; const n = String(a.id||'').replace('art-',''); return [`${cat.id}/${n}`, `${cat.slug}/${n}`].some(k => B[k] && B[k].includes('art-video')); };
 
 const CATS = window.HC_CATEGORIES.filter(c => !c.hidden);
 const ARTS = window.HC_ARTICLES;
@@ -117,7 +118,7 @@ function renderHub() {
           <div class="cat-head-row">
             <div class="cat-name">${escapeHtml(cat.name)}</div>
             ${cat.soon ? '<span class="cat-soon-pill">Coming soon</span>' : `<span class="cat-count">${articles.length} article${articles.length===1?'':'s'}</span>`}
-            ${(!cat.soon && (UPDATED[cat.id]||[]).length) ? `<span class="cat-updated-pill"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>${(UPDATED[cat.id]||[]).length}/${articles.filter(a=>!a.soon).length} updated</span>` : ''}
+            
           </div>
           <div class="cat-blurb">${escapeHtml(cat.blurb)}</div>
         </div>
@@ -143,7 +144,7 @@ function renderHub() {
             <div class="art-title">${escapeHtml(a.title)}</div>
             <div class="art-blurb">${escapeHtml(a.blurb)}</div>
           </div>
-          ${a.soon ? '<span class="art-soon-badge">Coming Soon</span>' : (isUpdated(cat.id, a.id) ? '<span class="art-updated-badge" title="New screenshots added"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Updated</span>' : '<svg class="art-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>')}
+          ${a.soon ? '<span class="art-soon-badge">Coming Soon</span>' : (hasVideo(cat, a) ? '<span class="art-video-badge" title="Includes a video walkthrough"><svg viewBox="0 0 24 24"><polygon points="7 4 20 12 7 20 7 4"/></svg>Video</span>' : '<svg class="art-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>')}
         `;
         grid.appendChild(card);
       });
