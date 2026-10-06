@@ -1275,7 +1275,7 @@ nav.nav{display:none !important}
 </div><!-- /.rs-shell -->
 
 <script src="articles-data.js?v=23"></script>
-<script src="src/article-bodies.js?v=31"></script>
+<script src="src/article-bodies.js?v=33"></script>
 <script src="screenshots-data.js?v=14"></script>
 <link rel="stylesheet" href="src/src-content.css?v=5">
 <script src="hc-app.js?v=17"></script>
@@ -1308,4 +1308,14 @@ nav.nav{display:none !important}
 #cvMain .ov-label { background-color: rgba(228, 228, 228, 0) !important }
 #cvMain .ov-label { padding: 6px 0px 6px 12px !important }
 #cvMain .ov-label { padding: 6px 0px !important }
+
+/* Dark mode readability fixes */
+:root[data-theme="dark"] .cv-body .steps-label,:root[data-theme="dark"] .cv-body .ov-label,:root[data-theme="dark"] .cv-body .details-label,:root[data-theme="dark"] .cv-body .hc-steps-label{color:var(--t-1)}
+:root[data-theme="dark"] .cv-art-nav .nl{color:var(--t-3)}
+:root[data-theme="dark"] .cv-body a,:root[data-theme="dark"] .cv-body .el-learn,:root[data-theme="dark"] .cv-body .tool-learn,:root[data-theme="dark"] .art-nav-label,:root[data-theme="dark"] .art-nav-title{color:#c49bff}
+:root[data-theme="dark"] .cv-body .plan-tag.business,:root[data-theme="dark"] .cv-body .rb-owner{color:#c49bff}
+:root[data-theme="dark"] .cv-body .status-pill,:root[data-theme="dark"] .cv-body .rb-admin,:root[data-theme="dark"] .cv-body .plan-tag.all,:root[data-theme="dark"] .cv-body .pb-all,:root[data-theme="dark"] .cv-body .m-tag.a{color:#3fdc80}
+:root[data-theme="dark"] .cv-body .rb-mod{color:#ffb733}
+:root[data-theme="dark"] .cv-body [style*="color:#7c3aed"]{color:#b98aff!important}
+:root[data-theme="dark"] .cv-body [style*="color:#059669"]{color:#3fdc80!important}
 </style>
