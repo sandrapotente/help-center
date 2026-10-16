@@ -32,7 +32,7 @@ const UPDATED = {
   engagement: ['art-0','art-1','art-2','art-3','art-4']
 };
 const isUpdated = (catId, artId) => (UPDATED[catId] || []).includes(artId);
-const hasVideo = (cat, a) => { const B = window.HC_ARTICLE_BODIES || {}; const n = String(a.id||'').replace('art-',''); return [`${cat.id}/${n}`, `${cat.slug}/${n}`].some(k => B[k] && B[k].includes('art-video')); };
+const hasVideo = (cat, a) => { const B = window.HC_ARTICLE_BODIES || {}; const L = (window.HC_ARTICLES||{})[cat.id] || []; const ix = L.findIndex(x => x.id === a.id); const n = ix > -1 ? ix : String(a.id||'').replace('art-',''); return [`${cat.srcKey}/${n}`, `${cat.id}/${n}`, `${cat.slug}/${n}`].some(k => B[k] && B[k].includes('art-video')); };
 
 const CATS = window.HC_CATEGORIES.filter(c => !c.hidden);
 const ARTS = window.HC_ARTICLES;
@@ -133,8 +133,8 @@ function renderHub() {
     } else {
       const grid = document.createElement('div');
       grid.className = 'art-grid';
-      articles.forEach(a => {
-        const letter = a.id.replace('art-','');
+      articles.forEach((a, ai) => {
+        const letter = String(ai);
         const card = document.createElement(a.soon ? 'div' : 'a');
         card.className = a.soon ? 'art-card is-soon' : 'art-card';
         if (!a.soon) card.href = '#' + cat.id + '/' + a.id;
@@ -308,8 +308,8 @@ function sidebarHTML(activeCat, activeArt) {
   const arts = ARTS[activeCat.id] || [];
   let html = `<div class="cv-hlabel"><span class="cv-cat-color" style="background:${activeCat.color}"></span>${escapeHtml(activeCat.name)}</div>`;
   html += '<div class="cv-arts">';
-  arts.forEach(a => {
-    const letter = a.id.replace('art-','');
+  arts.forEach((a, ai) => {
+    const letter = String(ai);
     const isActive = activeArt && a.id === activeArt.id;
     if (a.soon) {
       html += `<div class="cv-art is-soon">
